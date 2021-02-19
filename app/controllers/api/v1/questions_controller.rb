@@ -11,6 +11,8 @@ class Api::V1::QuestionsController < ApplicationController
       render json: @question, status: :ok
   end
 
+  
+
   def create
     @question = Question.new(question_params)
     if @question.save
