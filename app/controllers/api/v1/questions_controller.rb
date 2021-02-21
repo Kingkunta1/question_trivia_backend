@@ -25,6 +25,16 @@ class Api::V1::QuestionsController < ApplicationController
     else
       render json: {errors: @question.errors.full_messages}, status: :unproccesible_entity
     end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if question.destroy
+      render :json =>{alert:" Question was successfully destroyed"}
+    else
+      render :json =>{alert:"Not this time"}
+    end
+  end
 
   # creating one instance of question
   # if not possible to save then render error message

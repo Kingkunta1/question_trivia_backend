@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :questions
         resources :answers
         get 'new_questions', to: 'questions#get_new'
+        # get 'create_quest'
     end
   end
 end
