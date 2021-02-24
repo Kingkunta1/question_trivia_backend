@@ -27,6 +27,7 @@ class Api::V1::QuestionsController < ApplicationController
     end
   end
 
+
   def destroy
     @question = Question.find(params[:id])
     if question.destroy
@@ -58,7 +59,5 @@ end
 
 
 
-
-end
 
 end
