@@ -30,7 +30,7 @@ class Api::V1::QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    if question.destroy
+    if @question.destroy
       render :json =>{alert:" Question was successfully destroyed"}
     else
       render :json =>{alert:"Not this time"}
